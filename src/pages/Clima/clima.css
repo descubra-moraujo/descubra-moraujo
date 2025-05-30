@@ -1,0 +1,63 @@
+:root {
+  --cor-principal: #045134;
+  --cor-segundaria: #FFAE02;
+}
+
+.retangulo-amarelo {
+  background-color: var(--cor-segundaria);
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  box-sizing: border-box;
+  /* Transição suave para ajustes */
+  transition: height 0.3s ease;
+}
+
+.clima-container {
+  width: 100%;
+  overflow-x: hidden;  /* evita scroll horizontal */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.clima {
+  width: 100%;
+  overflow: visible;
+}
+
+.clima-texto h2 {
+  color: white;
+  font-size: 35px;
+  margin: 20px;
+  word-break: break-word; /* evita quebra estranha de palavras */
+  transition: font-size 0.3s ease, margin 0.3s ease;
+}
+
+/* === TABLET (<= 768px) === */
+@media (max-width: 768px) {
+  .retangulo-amarelo {
+    height: 80px;
+    padding-left: 15px;
+  }
+
+  .clima-texto h2 {
+    font-size: 28px;
+    margin: 15px;
+  }
+}
+
+/* === CELULAR (<= 480px) === */
+@media (max-width: 480px) {
+  .retangulo-amarelo {
+    height: 70px;
+    padding-left: 10px;
+  }
+
+  .clima-texto h2 {
+    font-size: 22px;
+    margin: 10px;
+  }
+}

@@ -1,0 +1,110 @@
+:root {
+  --cor-principal: #045134;
+  --cor-segundaria: #FFAE02;
+}
+
+.header-container {
+   background-color: white; 
+  padding: 8px 16px;
+  position: relative;
+    height: 60px; 
+  overflow: visible; 
+}
+
+.header {
+    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Blocos */
+.esquerda, .centro, .direita {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ícone do menu */
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Menu dropdown */
+.menu-animation {
+  position: absolute;
+  top: 60px;
+  left: 16px;
+  background-color: white;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.menu-animation a {
+  text-decoration: none;
+  color: #333;
+  padding: 6px 0;
+  font-weight: 500;
+}
+
+.menu-animation a:hover {
+  color: var(--cor-principal);
+}
+
+/* Logos */
+.logo {
+  height: clamp(50px, 8vw, 100px);
+  object-fit: contain;
+  z-index: 10;
+}
+
+.logo-prefeitura {
+  height: clamp(40px, 6vw, 70px);
+  margin-top: 0;
+  position: relative;
+  object-fit: contain;
+  left: 0;
+}
+
+/* ===== TABLET (<=768px) ===== */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 8px 12px;
+  }
+
+  .menu-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .menu-animation {
+    top: 56px;
+    left: 12px;
+  }
+}
+
+/* ===== CELULAR (<=480px) ===== */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 6px 10px;
+  }
+
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .menu-animation {
+    top: 50px;
+    left: 10px;
+    font-size: 14px;
+  }
+
+  .menu-animation a {
+    padding: 5px 0;
+  }
+}

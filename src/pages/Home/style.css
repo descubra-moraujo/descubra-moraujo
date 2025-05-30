@@ -1,0 +1,42 @@
+:root {
+  --cor-principal: #045134;
+  --cor-segundaria: #FFAE02;
+}
+
+.home-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 8; /* ou ajuste para a proporção da sua imagem */
+}
+
+.banner-moraujo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin-top: -80px;
+}
+
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .banner-moraujo {
+    height: 60vh;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  .banner-moraujo {
+      height: 40vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-moraujo {
+    height: 40vh;
+  }
+}
