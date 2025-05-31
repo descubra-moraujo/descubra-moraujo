@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  codigo     String   @unique
+  senha     String
+  criadoEm  DateTime @default(now())
+}
+
+model Evento {
+  id               Int      @id @default(autoincrement())
+  titulo           String
+  descricao        String
+  dataInicio       DateTime
+  dataFim          DateTime
+  local            String
+  whatsapp         String
+  instagram        String
+  pontoTuristicoId Int?
+  pontoTuristico   PontoTuristico? @relation(fields: [pontoTuristicoId], references: [id])
+}
+
+model Restaurante {
+  id               Int      @id @default(autoincrement())
+  nome             String
+  tipoCulinaria    String
+  endereco         String
+  local            String
+  whatsapp         String
+  instagram        String
+  pontoTuristicoId Int?
+  pontoTuristico   PontoTuristico? @relation(fields: [pontoTuristicoId], references: [id])
+}
+
+model Hospedagem {
+  id               Int      @id @default(autoincrement())
+  nome             String
+  tipo             String
+  precoPorNoite    Float
+  local            String
+  whatsapp         String
+  instagram        String
+  pontoTuristicoId Int?
+  pontoTuristico   PontoTuristico? @relation(fields: [pontoTuristicoId], references: [id])
+}
+
+model PontoTuristico {
+  id            Int           @id @default(autoincrement())
+  nome          String
+  descricao     String
+  localizacao   String
+  local         String
+  whatsapp      String
+  instagram     String
+  eventos       Evento[]
+  restaurantes  Restaurante[]
+  hospedagens   Hospedagem[]
+}
