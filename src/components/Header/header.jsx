@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './header.css';
-
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,16 +8,18 @@ const Header = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
   return (
     <div className="header-container">
       <div className="header">
         <div className="esquerda">
-          <img src="/menu.png" alt="menu" className="menu-icon" onClick={toggleMenu} />{menuOpen && (
+          <img src="/menu.png" alt="menu" className="menu-icon" onClick={toggleMenu} />
+          {menuOpen && (
             <div className="menu-animation">
-              <a href="#turismo">Turismo</a>
-              <a href="#restaurantes">Restaurantes</a>
-              <a href="#hoteis">Hotéis</a>
-              <a href="#eventos">Eventos</a>
+              <Link to="/turismo" state={{ categoria: "Restaurantes" }}>Restaurantes</Link>
+              <Link to="/turismo" state={{ categoria: "Hotéis" }}>Hotéis</Link>
+              <Link to="/turismo" state={{ categoria: "Turismo" }}>Turismo</Link>
+              <Link to="/turismo" state={{ categoria: "Eventos" }}>Eventos</Link>
             </div>
           )}
         </div>

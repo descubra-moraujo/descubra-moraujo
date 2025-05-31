@@ -7,7 +7,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 8; /* ou ajuste para a proporção da sua imagem */
+  aspect-ratio: 16 / 8;
 }
 
 .banner-moraujo {
@@ -19,16 +19,13 @@
   margin-top: -80px;
 }
 
-
-
-/* Tablet */
+/*responsividade */
 @media (max-width: 1024px) {
   .banner-moraujo {
     height: 60vh;
   }
 }
 
-/* Celulares */
 @media (max-width: 768px) {
   .banner-moraujo {
       height: 40vh;

@@ -12,13 +12,12 @@
   justify-content: flex-start;
   padding-left: 20px;
   box-sizing: border-box;
-  /* Transição suave para ajustes */
   transition: height 0.3s ease;
 }
 
 .clima-container {
   width: 100%;
-  overflow-x: hidden;  /* evita scroll horizontal */
+  overflow-x: hidden; 
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -32,11 +31,11 @@
   color: white;
   font-size: 35px;
   margin: 20px;
-  word-break: break-word; /* evita quebra estranha de palavras */
+  word-break: break-word; 
   transition: font-size 0.3s ease, margin 0.3s ease;
 }
 
-/* === TABLET (<= 768px) === */
+/*responsividade */
 @media (max-width: 768px) {
   .retangulo-amarelo {
     height: 80px;
@@ -49,7 +48,7 @@
   }
 }
 
-/* === CELULAR (<= 480px) === */
+
 @media (max-width: 480px) {
   .retangulo-amarelo {
     height: 70px;

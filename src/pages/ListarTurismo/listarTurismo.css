@@ -1,0 +1,121 @@
+:root {
+  --cor-principal: #045134;
+  --cor-secundaria: #FFAE02;
+  --cor-terciaria: #8b8b8a;
+  --cor-quartenaria: #ebebeb;
+}
+.listar-container {
+  background-color: white;
+  height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.voltar {
+  color: #004225;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.conteudo-listar {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filtros button {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filtros .botao-selecionado {
+  background-color: #006400;
+  color: white;
+}
+
+.filtros .botao-excluir {
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 18px;
+}
+
+.filtros .botao-adicionar {
+  background-color: var(--cor-quartenaria);
+  color: red;
+  font-size: 18px;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.item {
+  background-color: var(--cor-quartenaria);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-listar {
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-listar {
+  font-weight: bold;
+  margin: 0;
+}
+
+.categoria {
+  font-size: 12px;
+  margin: 0;
+  color: #555;
+}
+
+.item-acoes a {
+  margin-left: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.item-acoes button.excluir {
+  background: none;
+  border: none;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+.item-acoes button.excluir:hover {
+  text-decoration: underline;
+}
+
+
+.item-acoes .excluir {
+  color: red;
+}
+
+.item-acoes .editar {
+  color: blue;
+}

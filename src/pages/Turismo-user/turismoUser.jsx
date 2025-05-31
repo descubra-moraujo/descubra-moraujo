@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './turismoUser.css';
 
 const TurismoUser = () => {
   const [items, setItems] = useState([]);
   const [categoriaSelecionada, setCategoriaSelecionada] = useState('Tudo');
   const navigate = useNavigate();
+  const location = useLocation(); 
 
   const categoriaIcones = {
     Tudo: 'bi-grid',
@@ -14,6 +15,11 @@ const TurismoUser = () => {
     Turismo: 'bi-map',
     Eventos: 'bi-calendar-event',
   };
+  useEffect(() => {
+    if (location.state?.categoria) {
+      setCategoriaSelecionada(location.state.categoria);
+    }
+  }, [location.state]);
 
   useEffect(() => {
     const fakeData = [
@@ -35,7 +41,7 @@ const TurismoUser = () => {
   return (
     <>
       <button onClick={() => navigate("/")} className="botao-voltar">
-        &lt; Voltar
+        ← Voltar
       </button>
       <div className="turismo-container">
         <h1>Tudo o que você precisa para conhecer Moraújo</h1>
@@ -60,7 +66,6 @@ const TurismoUser = () => {
               className="card"
               key={item.id}
               onClick={() => navigate(`/detalhes`)}
-            /*  onClick={() => navigate(`/detalhes/${item.id}`)}*/
             >
               <img src={item.imagem} alt={item.nome} className="card-image" />
               <div className="card-title">{item.nome}</div>

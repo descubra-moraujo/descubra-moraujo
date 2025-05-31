@@ -3,7 +3,6 @@ import './clima.css';
 
 function Clima() {
   useEffect(() => {
-    // Carregar o script do weatherwidget.io só uma vez
     const scriptId = 'weatherwidget-io-js';
     if (!document.getElementById(scriptId)) {
       const script = document.createElement('script');

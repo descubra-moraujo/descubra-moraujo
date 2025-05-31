@@ -10,7 +10,7 @@ const Footer = () => {
 
     <div className='footer-esquerda'>
       <img src='./brasao-prefeitura.png' alt='logo prefeitura' className='brasao-esquerda' />
-      <a href="/admin" className='link-area'>Área Administrativa</a>
+      <a href="/login" className='link-area'>Área Administrativa</a>
     </div>
 
     <div className='footer-centro'>

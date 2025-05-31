@@ -63,9 +63,9 @@ h1 {
   padding: 10px 20px;
   margin: 0 5px;
   cursor: pointer;
-   white-space: nowrap; /* evita quebra de texto */
-  flex-shrink: 0; /* impede de encolher muito */
-  min-width: 100px; /* garante um tamanho mínimo */
+   white-space: nowrap; 
+  flex-shrink: 0; 
+  min-width: 100px;
   transition: background-color 0.3s;
 }
 
@@ -86,7 +86,7 @@ h1 {
   margin-top: 20px;
 }
 
-/* Card com tamanho fixo */
+
 .card {
   position: relative;
   background-color: white;
@@ -130,7 +130,8 @@ h1 {
   font-weight: bold;
 }
 
-/* Responsividade para tablet */
+
+/*responsivo */
 @media (max-width: 1024px) {
   .card {
     width: 25%;
@@ -138,7 +139,6 @@ h1 {
   }
 }
 
-/* Responsividade para celular */
 @media (max-width: 600px) {
   .card {
     width: 100%;
@@ -157,6 +157,10 @@ font-size: 0.85rem;
   .tab-text{
     display: none;
   }
+  .retangulo-cinza {
+  height: 70px;
+  margin-left: -9px;
+}
 
   .turismo-container {
     width: 95%;

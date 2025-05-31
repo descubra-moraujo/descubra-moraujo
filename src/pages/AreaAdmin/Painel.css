@@ -1,0 +1,256 @@
+:root {
+  --cor-principal: #045134;
+  --cor-segundaria: #FFAE02;
+  --cor-terciaria: #8b8b8a;
+  --cor-quartenaria: #ebebeb;
+}
+
+.painel-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.painel-sidebar {
+  width: 200px;
+  background-color: var(--cor-principal);
+  color: white;
+  padding: 20px;
+   border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.painel-sidebar h2 {
+  margin-bottom: 120px;
+}
+.admin-h2{
+    margin-left: 40px;
+}
+
+.painel-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.painel-sidebar li {
+  margin: 20px 0;
+  cursor: pointer;
+  color: var(--cor-principal);
+}
+
+.painel-main {
+  flex: 1;
+  padding: 30px;
+  background-color: #f2f2f2;
+}
+
+.painel-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.painel-menu-item {
+  background-color: var(--cor-quartenaria);
+  margin-bottom: 12px;
+  padding: 10px 15px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 105%;
+  height: 30px;
+  left: -20px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.painel-menu-item {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 12px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1;
+  color: var(--cor-principal);
+}
+
+.painel-menu-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--cor-quartenaria);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+
+.painel-menu-item:hover::before {
+  transform: scaleX(1);
+}
+
+
+
+.toggle-button {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  background-color: var(--cor-principal);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.painel-sidebar {
+  width: 200px;
+  background-color: var(--cor-principal);
+  color: white;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.painel-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+
+.painel-menu-item:hover {
+  background-color: #ffffff44;
+}
+
+
+.painel-categorias {
+  margin-bottom: 20px;
+}
+.painel-sidebar.fechado {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.categoria-button {
+  margin: 0 10px 10px 0;
+  padding: 10px 20px;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.categoria-button.active {
+  background-color: var(--cor-principal);
+  color: white;
+}
+
+.painel-cards {
+   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.local-card {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  height: 230px;
+  padding: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.local-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.painel-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.painel-title {
+  font-size: 1.1em;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.category-painel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--cor-terciaria);
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.painel-menu-item span {
+  margin-left: 8px;
+}
+
+.painel-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: var(--cor-quartenaria);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: var(--cor-principal);
+}
+
+.painel-menu-item i {
+  font-size: 1.2rem;
+}
+
+.menu-text {
+  display: inline;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+/*responsividade */
+@media (max-width: 768px) {
+  .painel-sidebar {
+    width: 40px;
+    padding: 10px;
+  }
+  .painel-menu-item{
+    top: 100px;
+    width: 40px;
+  }
+
+  .menu-text {
+    display: none;
+  }
+
+  .admin-h2 {
+    display: none;
+  }
+}
+
