@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import app from '../index.js';
 
 describe('Testes de Login do Admin', function () {
-  this.timeout(5000); // Aumentando timeout para 5 segundos
+  this.timeout(5000);
 
   it('Deve logar com credenciais corretas', async () => {
     const res = await request(app)

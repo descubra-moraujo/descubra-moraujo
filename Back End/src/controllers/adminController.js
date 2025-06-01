@@ -32,7 +32,6 @@ async function criarAdmin(req, res) {
   try {
     const { codigo, senha } = req.body;
 
-    // Criptografar senha antes de salvar
     const senhaHash = await bcrypt.hash(senha, SALT_ROUNDS);
 
     const novoAdmin = await prisma.admin.create({

@@ -1,8 +1,6 @@
 import request from 'supertest';
-import chai from 'chai';
+import { expect } from 'chai';
 import app from '../index.js'; 
-
-const expect = chai.expect;
 
 describe('Testes de Eventos', () => {
   it('Deve listar eventos', async () => {
