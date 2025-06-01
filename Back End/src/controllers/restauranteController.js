@@ -2,7 +2,6 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-// 🔹 Criar Restaurante
 async function criarRestaurante(req, res) {
   try {
     const { nome, local, whatsapp, instagram, pontoTuristicoId } = req.body;
@@ -23,7 +22,6 @@ async function criarRestaurante(req, res) {
   }
 }
 
-// 🔹 Listar Todos os Restaurantes
 async function listarRestaurantes(_, res) {
   try {
     const restaurantes = await prisma.restaurante.findMany();
@@ -33,7 +31,6 @@ async function listarRestaurantes(_, res) {
   }
 }
 
-// 🔹 Atualizar Restaurante
 async function atualizarRestaurante(req, res) {
   const { id } = req.params;
   try {
@@ -48,7 +45,6 @@ async function atualizarRestaurante(req, res) {
   }
 }
 
-// 🔹 Excluir Restaurante
 async function excluirRestaurante(req, res) {
   const { id } = req.params;
   try {
@@ -62,7 +58,6 @@ async function excluirRestaurante(req, res) {
   }
 }
 
-// 🔹 Exportar funções em um objeto
 export default {
   criarRestaurante,
   listarRestaurantes,

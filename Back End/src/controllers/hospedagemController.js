@@ -1,6 +1,5 @@
 import prisma from "../config/prisma.js";
 
-// Função para criar hospedagem
 async function criarHospedagem(req, res) {
   try {
     const { nome, local, whatsapp, instagram, pontoTuristicoId } = req.body;
@@ -15,7 +14,6 @@ async function criarHospedagem(req, res) {
   }
 }
 
-// Função para listar todas as hospedagens
 async function listarHospedagens(_, res) {
   try {
     const hospedagens = await prisma.hospedagem.findMany();
@@ -25,7 +23,6 @@ async function listarHospedagens(_, res) {
   }
 }
 
-// Função para atualizar hospedagem
 async function atualizarHospedagem(req, res) {
   const { id } = req.params;
   try {
@@ -40,7 +37,6 @@ async function atualizarHospedagem(req, res) {
   }
 }
 
-// Função para excluir hospedagem
 async function excluirHospedagem(req, res) {
   const { id } = req.params;
   try {
@@ -54,7 +50,6 @@ async function excluirHospedagem(req, res) {
   }
 }
 
-// Exportar todas as funções dentro de um objeto
 export default {
   criarHospedagem,
   listarHospedagens,

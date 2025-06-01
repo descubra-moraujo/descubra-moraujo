@@ -1,4 +1,5 @@
 import express from 'express';
+import adminController from '../controllers/adminController.js';
 import authMiddleware from '../middlewares/auth.js';
 import eventoController from '../controllers/eventoController.js';
 import hospedagemController from '../controllers/hospedagemController.js';
@@ -6,6 +7,10 @@ import pontoTuristicoController from '../controllers/pontoTuristicoController.js
 import restauranteController from '../controllers/restauranteController.js';
 
 const router = express.Router();
+
+// 🔹 Rota de Login do Admin
+router.post('/admin/login', adminController.loginAdmin);
+router.post('/admin/create', adminController.criarAdmin);
 
 // 🔹 Rotas para Eventos
 router.post('/admin/evento/create', authMiddleware, eventoController.criarEvento);

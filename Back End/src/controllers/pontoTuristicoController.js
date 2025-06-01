@@ -2,7 +2,6 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-// 🔹 Criar Ponto Turístico
 async function criarPontoTuristico(req, res) {
   try {
     const { nome, descricao, local, whatsapp, instagram } = req.body;
@@ -23,7 +22,6 @@ async function criarPontoTuristico(req, res) {
   }
 }
 
-// 🔹 Listar Todos os Pontos Turísticos
 async function listarPontosTuristicos(_, res) {
   try {
     const pontosTuristicos = await prisma.pontoTuristico.findMany();
@@ -33,7 +31,6 @@ async function listarPontosTuristicos(_, res) {
   }
 }
 
-// 🔹 Atualizar Ponto Turístico
 async function atualizarPontoTuristico(req, res) {
   const { id } = req.params;
   try {
@@ -48,7 +45,6 @@ async function atualizarPontoTuristico(req, res) {
   }
 }
 
-// 🔹 Excluir Ponto Turístico
 async function excluirPontoTuristico(req, res) {
   const { id } = req.params;
   try {
@@ -62,7 +58,6 @@ async function excluirPontoTuristico(req, res) {
   }
 }
 
-// 🔹 Exportar funções em um objeto
 export default {
   criarPontoTuristico,
   listarPontosTuristicos,
