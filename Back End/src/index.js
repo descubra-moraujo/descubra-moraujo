@@ -1,17 +1,18 @@
-// index.js
 import express from 'express';
-import adminRoutes from './routes/adminRoutes.js'; // certifique-se que o caminho está correto
 import cors from 'cors';
+import adminRoutes from './routes/adminRoutes.js';
+// import publicRoutes from './routes/userRoutes.js';
+import prisma from './config/prisma.js';
 
 const app = express();
-const PORT = 3001;
 
-app.use(cors());
+app.use(cors()); 
 app.use(express.json());
 
-// Rotas do admin e rotas públicas
-app.use('/api', adminRoutes);
+app.use('/admin', adminRoutes);
+// app.use('/', publicRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+app.listen(3001, () => {
+  console.log('Servidor rodando na porta 3001');
 });
+ 

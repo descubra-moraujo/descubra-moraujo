@@ -32,8 +32,6 @@ model Evento {
 model Restaurante {
   id               Int      @id @default(autoincrement())
   nome             String
-  tipoCulinaria    String
-  endereco         String
   local            String
   whatsapp         String
   instagram        String
@@ -44,8 +42,6 @@ model Restaurante {
 model Hospedagem {
   id               Int      @id @default(autoincrement())
   nome             String
-  tipo             String
-  precoPorNoite    Float
   local            String
   whatsapp         String
   instagram        String
@@ -57,7 +53,6 @@ model PontoTuristico {
   id            Int           @id @default(autoincrement())
   nome          String
   descricao     String
-  localizacao   String
   local         String
   whatsapp      String
   instagram     String

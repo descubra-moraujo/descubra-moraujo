@@ -1,16 +1,17 @@
-// prisma/seed.ts
-import { PrismaClient } from '@prisma/client';
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function main() {
   await prisma.admin.upsert({
-    where: { codigo: '123456' },
+    where: { codigo: 271157 },
     update: {},
     create: {
-      codigo: '123456', // apenas números
-      senha: 'admin123', // números e letras
+      codigo: 271157,
+      senha: 'descubramoraujo123',
     },
   });
 }
 
-main().finally(() => prisma.$disconnect());
+main()
+  .catch(console.error)
+  .finally(() => prisma.$disconnect());
