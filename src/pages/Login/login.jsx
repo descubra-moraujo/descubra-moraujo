@@ -10,9 +10,31 @@ const Login = () => {
   const navigate= useNavigate();
   const [verSenha, setVerSenha] = useState(false);
 
- const handleLogin = () => {
-  const codigoCorreto = 'admin123';
-  const senhaCorreta = 'senha123';
+ const handleLogin = async () => {
+  try {
+    const response = await fetch("http://localhost:3001/admin/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ codigo, senha })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert("Login realizado com sucesso!");
+      localStorage.setItem("token", data.token); 
+      navigate("/painel");
+    } else {
+      alert(data.error || "Erro ao fazer login");
+    }
+  } catch (error) {
+    alert("Erro ao conectar ao servidor");
+    console.error("Erro no login:", error);
+  }
+};
+
 
   if (codigo === codigoCorreto && senha === senhaCorreta) {
     alert('Login realizado com sucesso!');
@@ -20,7 +42,6 @@ const Login = () => {
   } else {
     alert('Código ou senha incorretos.');
   }
-  };
 
   return (
     <div className="admin-login-container">
